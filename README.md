@@ -1,7 +1,7 @@
 ##################################### JAVA ###################################
 
 
-docker run --rm --name codeql-docker   --entrypoint /bin/bash   -v "C:\Users\CPU12447\Documents\test\testproject\config-store-full-libs\config-store-full-libs:/opt/src"   -v "C:\Users\CPU12447\Documents\test\testproject\config-store-full-libs\results:/opt/results"   -e "LANGUAGE=java"   -e "FORMAT=sarif-latest"   -e "QS=java-security-and-quality.qls"   -e "THREADS=5"   -it fl4ming0/codeql:1.1
+docker run --rm --name codeql-docker   --entrypoint /bin/bash   -v "./src:/opt/src"   -v "./results:/opt/results"   -e "LANGUAGE=java"   -e "FORMAT=sarif-latest"   -e "QS=java-security-and-quality.qls"   -e "THREADS=5"   -it fl4ming0/codeql:1.1
 
 
 apt-get update && apt-get install -y --no-install-recommends \
@@ -23,7 +23,7 @@ codeql database analyze --threads=10 --ram 12000  --format=sarif-latest  --outpu
 ##################################### CPP #######################################
 
 
-docker run --rm --name codeql-docker   --entrypoint /bin/bash   -v "C:\Users\CPU12447\Documents\test\testproject\zdbms_built_debug\zdbmserver:/opt/src"   -v "C:\Users\CPU12447\Documents\test\testproject\zdbms_built_debug\results:/opt/results"   -e "LANGUAGE=cpp"   -e "FORMAT=sarif-latest"   -e "QS=cpp-security-and-quality.qls"   -e "THREADS=5"   -it fl4ming0/codeql:1.1
+docker run --rm --name codeql-docker   --entrypoint /bin/bash   -v "./src:/opt/src"   -v "./results:/opt/results"   -e "LANGUAGE=cpp"   -e "FORMAT=sarif-latest"   -e "QS=cpp-security-and-quality.qls"   -e "THREADS=5"   -it fl4ming0/codeql:1.1
 
 
 
